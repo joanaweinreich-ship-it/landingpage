@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEINS – Das digitale Fundament für dein Business | 1.001 € nur bis 31.05.</title>
+  <meta name="description" content="Von Rettungsdienst zu digitaler Freiheit. DEINS: Der klare Weg zu Social Media, digitalen Produkten und echtem Einkommen.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--white:#FFFFFF;--light-bg:#F9F7F4;--bg:#F5F3F0;--accent:#E74C3C;--accent-dark:#C0392B;--dark:#1A1A1A;--text:#2C2C2C;--gray:#666666;--light-gray:#999999;--muted:#CCCCCC;--gold:#F4B860;--success:#27AE60;--border:#E8E3DE;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;line-height:1.6;}
+@keyframes slideDown{from{transform:translateY(-100%);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(231,76,60,0.7);}50%{box-shadow:0 0 0 12px rgba(231,76,60,0);}}
+@keyframes slideInRight{from{opacity:0;transform:translateX(30px);}to{opacity:1;transform:translateX(0);}}
+.countdown-banner{position:fixed;top:0;left:0;right:0;z-index:200;background:linear-gradient(90deg,#C0392B 0%,#E74C3C 100%);border-bottom:4px solid var(--accent);padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 8px 32px rgba(192,57,43,0.35);animation:slideDown 0.6s ease;}
+.countdown-banner-text{font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.9);}
+.countdown-banner-text strong{color:var(--white);}
+.countdown-wrapper{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.countdown-item{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:4px;padding:8px 12px;text-align:center;min-width:55px;}
+.countdown-num{font-weight:900;font-size:1.6rem;color:var(--white);line-height:1;display:block;}
+.countdown-label{font-size:0.6rem;color:rgba(255,255,255,0.7);letter-spacing:0.08em;text-transform:uppercase;margin-top:2px;}
+.countdown-cta{background:var(--white);color:var(--accent-dark);font-weight:800;font-size:0.75rem;padding:10px 18px;border-radius:3px;text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.2s;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer;}
+.countdown-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+nav{position:fixed;top:52px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 5%;background:rgba(255,255,255,0.98);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav-logo{font-weight:900;font-size:1.4rem;color:var(--accent);letter-spacing:0.05em;}
+.nav-cta{background:var(--accent);color:var(--white);font-weight:800;font-size:0.78rem;padding:11px 20px;border-radius:3px;text-decoration:none;letter-spacing:0.05em;text-transform:uppercase;transition:all 0.2s;box-shadow:0 4px 14px rgba(231,76,60,0.3);}
+.nav-cta:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:0 6px 20px rgba(231,76,60,0.4);}
+.hero{padding:90px 5% 70px;background:linear-gradient(135deg,var(--white) 0%,var(--light-bg) 100%);text-align:center;margin-top:110px;}
+.hero-headline{font-weight:900;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.1;max-width:960px;margin:0 auto 20px;color:var(--dark);animation:fadeUp 0.6s 0.1s both;}
+.hero-headline em{color:var(--accent);font-style:italic;}
+.hero-subheadline{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--gray);max-width:700px;line-height:1.8;font-weight:500;margin:0 auto 32px;animation:fadeUp 0.6s 0.2s both;}
+.price-badge{display:inline-flex;align-items:baseline;gap:12px;background:rgba(231,76,60,0.08);border:2px solid var(--accent);border-radius:6px;padding:16px 28px;margin:24px 0;animation:fadeUp 0.6s 0.3s both;}
+.price-old{font-size:1.1rem;text-decoration:line-through;color:var(--light-gray);font-weight:500;}
+.price-new{font-weight:900;font-size:2rem;color:var(--accent);}
+.rate-display{font-size:0.95rem;color:var(--gray);margin:14px 0;animation:fadeUp 0.6s 0.35s both;}
+.rate-display strong{color:var(--text);font-weight:700;}
+.cta-primary{display:inline-block;background:var(--accent);color:var(--white);font-weight:900;font-size:1.1rem;padding:18px 44px;border-radius:4px;text-decoration:none;letter-spacing:0.04em;text-transform:uppercase;transition:all 0.25s;animation:fadeUp 0.6s 0.4s both;box-shadow:0 8px 24px rgba(231,76,60,0.3);border:none;cursor:pointer;}
+.cta-primary:hover{background:var(--accent-dark);transform:translateY(-3px) scale(1.02);box-shadow:0 12px 36px rgba(231,76,60,0.5);}
+.cta-primary:active{transform:translateY(-1px);}
+.cta-sub{font-size:0.8rem;color:var(--light-gray);margin-top:12px;animation:fadeUp 0.6s 0.45s both;}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:80px 5%;background:var(--white);max-width:1200px;margin:0 auto;}
+.story-content{animation:fadeUp 0.7s 0.2s both;}
+.story-tag{font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.story-headline{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;line-height:1.2;margin-bottom:20px;color:var(--dark);}
+.story-headline em{color:var(--accent);}
+.story-text{font-size:1rem;color:var(--gray);line-height:1.85;margin-bottom:18px;}
+.story-text strong{color:var(--text);font-weight:700;}
+.story-image{width:100%;max-width:380px;height:420px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.15);animation:slideInRight 0.7s 0.3s both;}
+.story-image img{width:100%;height:100%;object-fit:cover;object-position:center 10%;}
+.pain-section{padding:80px 5%;background:var(--light-bg);}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1200px;margin:48px auto 0;}
+.pain-item{background:var(--white);padding:28px 24px;border-radius:8px;border-left:4px solid var(--accent);transition:all 0.3s;box-shadow:0 2px 8px rgba(0,0,0,0.04);}
+.pain-item:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,0.1);}
+.pain-icon{font-size:2rem;margin-bottom:10px;}
+.pain-text{font-size:0.95rem;color:var(--gray);line-height:1.7;}
+.pain-text strong{display:block;color:var(--text);font-weight:700;margin-bottom:6px;font-size:1rem;}
+.urgency{padding:60px 5%;background:var(--accent);color:var(--white);text-align:center;}
+.urgency-headline{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:900;margin-bottom:16px;}
+.urgency-text{font-size:1.05rem;line-height:1.7;max-width:700px;margin:0 auto;}
+.urgency-text strong{font-weight:700;color:var(--gold);}
+.value-section{padding:80px 5%;background:var(--white);}
+.value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1200px;margin:40px auto 0;}
+.value-item{text-align:center;animation:fadeUp 0.6s ease both;}
+.value-num{font-weight:900;font-size:2.8rem;color:var(--accent);}
+.value-label{font-size:0.95rem;color:var(--gray);margin-top:8px;font-weight:600;}
+.testi-section{padding:80px 5%;background:var(--light-bg);}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:1200px;margin:40px auto 0;}
+.testi-card{background:var(--white);padding:32px 28px;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.06);transition:all 0.3s;}
+.testi-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,0.12);}
+.stars{color:var(--accent);font-size:1rem;letter-spacing:3px;margin-bottom:16px;}
+.testi-text{font-size:0.95rem;color:var(--gray);line-height:1.8;font-style:italic;margin-bottom:20px;}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--border);}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--gold));display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--white);font-size:0.85rem;flex-shrink:0;}
+.testi-name{font-weight:700;color:var(--text);}
+.testi-role{font-size:0.8rem;color:var(--light-gray);}
+.transform-section{padding:80px 5%;background:var(--white);}
+.transform-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center;max-width:1000px;margin:40px auto 0;}
+.transform-col{animation:fadeUp 0.6s ease both;}
+.transform-col-title{font-weight:800;font-size:1rem;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:24px;padding-bottom:12px;border-bottom:3px solid;}
+.transform-col.before .transform-col-title{color:var(--light-gray);border-color:var(--light-gray);}
+.transform-col.after .transform-col-title{color:var(--success);border-color:var(--success);}
+.transform-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.transform-list li{display:flex;gap:12px;align-items:flex-start;font-size:0.95rem;color:var(--gray);line-height:1.6;}
+.transform-list .dot{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:900;flex-shrink:0;}
+.before .dot{background:rgba(231,76,60,0.1);color:var(--accent);}
+.after .dot{background:rgba(39,174,96,0.1);color:var(--success);}
+.transform-arrow{font-size:2.2rem;color:var(--light-gray);}
+.modules-section{padding:80px 5%;background:var(--light-bg);}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1200px;margin:40px auto 0;}
+.module-card{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 20px;transition:all 0.3s;cursor:pointer;}
+.module-card:hover{border-color:var(--accent);box-shadow:0 8px 24px rgba(231,76,60,0.15);transform:translateY(-3px);}
+.module-num{font-weight:900;font-size:2rem;color:rgba(231,76,60,0.1);}
+.module-title{font-weight:700;font-size:0.95rem;color:var(--text);margin:8px 0;}
+.module-desc{font-size:0.85rem;color:var(--light-gray);line-height:1.6;}
+.eligibility{padding:60px 5%;background:var(--white);text-align:center;}
+.eligibility-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:1000px;margin:32px auto 0;}
+.eligibility-item{background:var(--light-bg);padding:18px 16px;border-radius:6px;font-size:0.9rem;color:var(--text);}
+.eligibility-item::before{content:'✓';color:var(--success);font-weight:900;margin-right:8px;}
+.not-suitable{background:rgba(231,76,60,0.08);border:2px solid rgba(231,76,60,0.2);border-radius:8px;padding:24px;max-width:700px;margin:40px auto 0;font-size:0.9rem;color:var(--gray);line-height:1.7;}
+.pricing-hero{padding:90px 5%;background:var(--dark);color:var(--white);text-align:center;}
+.pricing-headline{font-weight:900;font-size:clamp(2rem,4vw,3.2rem);margin-bottom:20px;}
+.pricing-subheadline{font-size:1.1rem;color:rgba(255,255,255,0.7);max-width:700px;margin:0 auto 42px;line-height:1.7;}
+.pricing-box{background:linear-gradient(135deg,rgba(231,76,60,0.1) 0%,rgba(244,184,96,0.1) 100%);border:2px solid var(--accent);border-radius:12px;padding:54px 48px;max-width:700px;margin:0 auto;text-align:center;position:relative;}
+.pricing-old{font-size:1.2rem;color:rgba(255,255,255,0.4);text-decoration:line-through;margin-bottom:8px;}
+.price-big{font-weight:900;font-size:clamp(2.8rem,6vw,4rem);color:var(--gold);line-height:1;margin:16px 0;}
+.price-period{font-size:0.9rem;color:rgba(255,255,255,0.5);margin-bottom:8px;}
+.price-rate{font-size:1.05rem;color:var(--gold);font-weight:700;background:rgba(244,184,96,0.1);border-radius:4px;padding:12px 20px;display:inline-block;margin:20px 0 32px;}
+.guarantee-box{background:rgba(39,174,96,0.08);border:1px solid rgba(39,174,96,0.3);border-radius:8px;padding:18px 20px;margin-top:24px;font-size:0.85rem;color:rgba(255,255,255,0.8);line-height:1.7;}
+.guarantee-box strong{color:var(--white);}
+.features-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin:28px 0;text-align:left;}
+.features-list li{display:flex;align-items:flex-start;gap:12px;font-size:0.95rem;color:rgba(255,255,255,0.85);}
+.features-list .tick{color:var(--gold);font-weight:900;flex-shrink:0;margin-top:2px;}
+.faq-section{padding:80px 5%;background:var(--light-bg);}
+.faq-list{max-width:900px;margin:40px auto 0;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:var(--white);}
+.faq-item{border-bottom:1px solid var(--border);}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{padding:22px 24px;font-size:1rem;font-weight:600;color:var(--text);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background 0.2s;user-select:none;}
+.faq-q:hover{background:var(--light-bg);}
+.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all 0.3s ease;font-size:0.95rem;color:var(--gray);line-height:1.8;}
+.faq-item.open .faq-a{max-height:400px;padding:0 24px 22px;}
+.chevron{transition:transform 0.3s;color:var(--accent);}
+.faq-item.open .chevron{transform:rotate(180deg);}
+.cta-final{padding:60px 5%;background:var(--accent);color:var(--white);text-align:center;}
+.cta-final-headline{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:900;margin-bottom:20px;}
+.cta-final-text{font-size:1rem;max-width:600px;margin:0 auto 32px;line-height:1.7;opacity:0.9;}
+.mobile-sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--accent);border-top:1px solid rgba(255,255,255,0.2);padding:12px 16px;box-shadow:0 -4px 24px rgba(231,76,60,0.25);transition:transform 0.3s ease;}
+.mobile-sticky.hidden{transform:translateY(100%);}
+.mobile-sticky-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:600px;margin:0 auto;}
+.mobile-sticky-text{font-size:0.78rem;color:rgba(255,255,255,0.8);}
+.mobile-sticky-text strong{color:var(--white);display:block;}
+.mobile-sticky-btn{background:var(--white);color:var(--accent);font-weight:800;font-size:0.75rem;letter-spacing:0.05em;text-transform:uppercase;padding:10px 18px;border-radius:3px;text-decoration:none;white-space:nowrap;flex-shrink:0;border:none;cursor:pointer;}
+.affiliate-section{padding:80px 5%;background:var(--white);}
+.affiliate-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:40px auto 0;}
+.aff-stat{text-align:center;padding:32px 24px;background:var(--light-bg);border-radius:8px;border-top:3px solid var(--accent);}
+.aff-num{font-weight:900;font-size:2.4rem;color:var(--accent);}
+.aff-label{font-size:0.9rem;color:var(--gray);margin-top:8px;font-weight:600;}
+.footer{background:var(--dark);color:rgba(255,255,255,0.6);padding:40px 5%;font-size:0.85rem;line-height:1.8;text-align:center;}
+.footer a{color:var(--gold);text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+.section-tag{font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.section-title{font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.2;margin-bottom:20px;color:var(--dark);}
+.section-title em{color:var(--accent);font-style:italic;}
+@media(max-width:768px){
+  .countdown-banner{flex-direction:column;gap:12px;padding:10px 4%;}
+  .countdown-wrapper{width:100%;justify-content:space-around;}
+  nav{top:auto;position:relative;padding:10px 4%;flex-direction:column-reverse;gap:12px;}
+  .hero{margin-top:0;padding:60px 4% 50px;}
+  .hero-headline{font-size:1.8rem;}
+  .story{grid-template-columns:1fr;gap:30px;padding:50px 4%;}
+  .story-image{height:340px;}
+  .pain-grid{gap:16px;}
+  .testi-grid{grid-template-columns:1fr;}
+  .transform-grid{grid-template-columns:1fr;}
+  .transform-arrow{display:none;}
+  .affiliate-grid{grid-template-columns:1fr;}
+  .pricing-box{padding:32px 20px;}
+  .mobile-sticky{display:flex;}
+  .features-list li{font-size:0.85rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY COUNTDOWN BANNER -->
+<div class="countdown-banner">
+  <div class="countdown-banner-text">
+    DEINS SPECIAL ENDET IN:
+  </div>
+  <div class="countdown-wrapper">
+    <div class="countdown-item">
+      <span class="countdown-num" id="countDays">08</span>
+      <span class="countdown-label">Tage</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-num" id="countHours">10</span>
+      <span class="countdown-label">Stunden</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-num" id="countMinutes">45</span>
+      <span class="countdown-label">Minuten</span>
+    </div>
+    <div class="countdown-item">
+      <span class="countdown-num" id="countSeconds">30</span>
+      <span class="countdown-label">Sekunden</span>
+    </div>
+  </div>
+  <a href="#pricing" class="countdown-cta" onclick="document.querySelector('.pricing-hero').scrollIntoView({behavior:'smooth'});">Sichern</a>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <span class="nav-logo">DEINS</span>
+  <a href="#pricing" class="nav-cta" onclick="document.querySelector('.pricing-hero').scrollIntoView({behavior:'smooth'});">Jetzt sichern</a>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <h1 class="hero-headline">
+    Der digitale Weg.<br>
+    Von <em>Null zu Einkommen.</em>
+  </h1>
+  
+  <p class="hero-subheadline">
+    23 Module. Ein System. Dein Tempo. Alles was du wissen musst – von Social Media über Psychologie bis zu digitalen Produkten.
+  </p>
+
+  <div class="price-badge">
+    <span class="price-old">1.500 €</span>
+    <span class="price-new">1.001 €</span>
+  </div>
+
+  <div class="rate-display">
+    <strong>ca. 41,71 €/Monat</strong> statt 62,50 €
+  </div>
+
+  <button class="cta-primary" onclick="document.querySelector('.pricing-hero').scrollIntoView({behavior:'smooth'});">
+    Zum Special →
+  </button>
+  
+  <p class="cta-sub">
+    Nur bis 31.05. um 21:00 Uhr. Danach 1.500 €.
+  </p>
+</section>
+
+<!-- STORY SECTION - Authority & Trust -->
+<section class="story">
+  <div class="story-content">
+    <div class="story-tag">Die Geschichte hinter DEINS</div>
+    <h2 class="story-headline">
+      Ich komme aus dem <em>Rettungsdienst</em><br>
+      Nicht aus Silicon Valley.
+    </h2>
+    
+    <p class="story-text">
+      Mitte letzten Jahres bin ich gestartet – ohne großes Netzwerk, ohne Hype, ohne irgendwelche Garantien. Nur mit der Frage: Wie funktioniert diese digitale Welt wirklich?
+    </p>
+    
+    <p class="story-text">
+      <strong>In 3 Monaten habe ich mehr verdient als in einem ganzen Jahr Rettungsdienst.</strong> Nicht weil ich besonders talentiert bin, sondern weil ich verstanden habe, wie das System funktioniert.
+    </p>
+    
+    <p class="story-text">
+      Und genau deshalb habe ich DEINS aufgebaut: Um dir den Weg zu zeigen, den ich gegangen bin. Ohne Fluff, ohne Versprechen, ohne Coaching-Abhängigkeit. Nur pure Systematik.
+    </p>
+  </div>
+  
+  <div class="story-image">
+    <img src="file:///Users/joanaweinreich/Desktop/slides/796605F5-3399-4321-8C36-9789B79AB47D%202.PNG" alt="Joana Weinreich - Gründerin von DEINS">
+  </div>
+</section>
+
+<!-- PAIN POINTS SECTION -->
+<section class="pain-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Kommt dir das bekannt vor?</div>
+    <h2 class="section-title">Du weißt, dass es anders geht.<br><em>Du kennst nur noch nicht den Weg.</em></h2>
+  </div>
+  
+  <div class="pain-grid">
+    <div class="pain-item">
+      <div class="pain-icon">🔇</div>
+      <div class="pain-text">
+        <strong>Social Media ohne Ergebnis</strong>
+        Du postest, aber niemand kauft. Der Algorithmus fühlt sich an wie Lotto.
+      </div>
+    </div>
+    
+    <div class="pain-item">
+      <div class="pain-icon">❓</div>
+      <div class="pain-text">
+        <strong>Keine klare Positionierung</strong>
+        Du weißt nicht, was dein eigentliches Angebot sein soll oder wie du dich abhebst.
+      </div>
+    </div>
+    
+    <div class="pain-item">
+      <div class="pain-icon">💸</div>
+      <div class="pain-text">
+        <strong>Teure Coachings bringen wenig</strong>
+        Du hast schon 2, 3, 4 Kurse gekauft und stehst trotzdem am selben Punkt.
+      </div>
+    </div>
+    
+    <div class="pain-item">
+      <div class="pain-icon">⏸️</div>
+      <div class="pain-text">
+        <strong>Keine Struktur</strong>
+        Du hast 100 Ideen aber keinen Plan. Ziellos am Kreisdenken hängenbleiben.
+      </div>
+    </div>
+    
+    <div class="pain-item">
+      <div class="pain-icon">😰</div>
+      <div class="pain-text">
+        <strong>Innere Blockaden</strong>
+        Du fragst dich: "Funktioniert das für mich?" und gibst auf, bevor du angefangen hast.
+      </div>
+    </div>
+    
+    <div class="pain-item">
+      <div class="pain-icon">📉</div>
+      <div class="pain-text">
+        <strong>Finanzielle Unsicherheit</strong>
+        Das Gehalt reicht nicht. Du willst Freiheit, weißt aber nicht wie.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY SECTION -->
+<section class="urgency">
+  <h2 class="urgency-headline">
+    Das Problem ist: <strong>Zeit ist Geld</strong>
+  </h2>
+  <p class="urgency-text">
+    Während du noch überlegst, tausende andere gerade ihre erste <strong>digitale Einkommensquelle aufbaut.</strong> Die, die diesen Weg verstanden haben, verdienen es gerade. Die anderen warten noch immer.
+  </p>
+</section>
+
+<!-- VALUE SECTION -->
+<section class="value-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <h2 class="section-title">Was dich erwartet</h2>
+  </div>
+  
+  <div class="value-grid">
+    <div class="value-item">
+      <div class="value-num">23+</div>
+      <div class="value-label">Module vollständig</div>
+    </div>
+    
+    <div class="value-item">
+      <div class="value-num">∞</div>
+      <div class="value-label">Lifetime Zugang</div>
+    </div>
+    
+    <div class="value-item">
+      <div class="value-num">0 €</div>
+      <div class="value-label">Keine laufenden Kosten</div>
+    </div>
+    
+    <div class="value-item">
+      <div class="value-num">📱</div>
+      <div class="value-label">In deinem Tempo lernen</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS SECTION -->
+<section class="testi-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Was andere sagen</div>
+    <h2 class="section-title">Echte Menschen.<br><em>Echte Ergebnisse.</em></h2>
+    <p style="color:var(--gray);margin-top:8px;font-size:0.9rem;">Individuelle Ergebnisse variieren je nach Einsatz und Situation.</p>
+  </div>
+  
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Ich war skeptisch. 8 Stunden täglich im Einzelhandel. Aber 3 Wochen später: Mein erster Verkauf war die Hälfte meines Monatsgehalts. Ich verstehe gerade noch immer nicht, wie das möglich ist."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">KB</div>
+        <div>
+          <div class="testi-name">Katja B.</div>
+          <div class="testi-role">Einzelhandel</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Ich habe vorher schon 3 Kurse gekauft. DEINS ist das erste Programm, das mir wirklich die Grundlagen erklärt hat – ohne dass ich danach noch 10 weitere kaufen muss."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">TK</div>
+        <div>
+          <div class="testi-name">Tobias K.</div>
+          <div class="testi-role">Nebenberuflich selbstständig</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Endlich ein Programm, das mir die ganze Struktur zeigt – nicht nur einzelne Tipps. Von Identity über Content bis zu Verkaufspsychologie. Es passt einfach zusammen."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">LM</div>
+        <div>
+          <div class="testi-name">Lena M.</div>
+          <div class="testi-role">Content Creator</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATION SECTION -->
+<section class="transform-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Was sich ändert</div>
+    <h2 class="section-title">Von Verwirrung zu <em>Klarheit</em></h2>
+  </div>
+  
+  <div class="transform-grid">
+    <div class="transform-col before">
+      <div class="transform-col-title">Vorher</div>
+      <ul class="transform-list">
+        <li><span class="dot">✗</span>Keine Richtung, nur Kreisdenken</li>
+        <li><span class="dot">✗</span>Content ohne Strategie</li>
+        <li><span class="dot">✗</span>Ideen, aber keine Struktur</li>
+        <li><span class="dot">✗</span>Angst vor Sichtbarkeit</li>
+        <li><span class="dot">✗</span>Finanzielle Unsicherheit</li>
+      </ul>
+    </div>
+    
+    <div class="transform-arrow">→</div>
+    
+    <div class="transform-col after">
+      <div class="transform-col-title">Nachher</div>
+      <ul class="transform-list">
+        <li><span class="dot">✓</span>Klare Richtung und Roadmap</li>
+        <li><span class="dot">✓</span>Content mit System</li>
+        <li><span class="dot">✓</span>Schritt-für-Schritt Aufbau</li>
+        <li><span class="dot">✓</span>Selbstbewusstsein und Sichtbarkeit</li>
+        <li><span class="dot">✓</span>Mehrere Einkommensquellen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES GRID -->
+<section class="modules-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">23+ Module</div>
+    <h2 class="section-title">Das komplette System</h2>
+  </div>
+  
+  <div class="modules-grid">
+    <div class="module-card"><div class="module-num">01</div><div class="module-title">Identität & Warum</div><div class="module-desc">Wer bist du wirklich? Dein echtes Fundament.</div></div>
+    <div class="module-card"><div class="module-num">02</div><div class="module-title">Mindset für Erfolg</div><div class="module-desc">Die innere Haltung, die erfolgreiche Menschen haben.</div></div>
+    <div class="module-card"><div class="module-num">03</div><div class="module-title">Nische & Positionierung</div><div class="module-desc">Wie du dich unverwechselbar machst.</div></div>
+    <div class="module-card"><div class="module-num">04</div><div class="module-title">Zielgruppen-Psychologie</div><div class="module-desc">Wer kauft wirklich und warum?</div></div>
+    <div class="module-card"><div class="module-num">05</div><div class="module-title">Social Media Strategie</div><div class="module-desc">Algorithmen verstehen, Reichweite aufbauen.</div></div>
+    <div class="module-card"><div class="module-num">06</div><div class="module-title">Instagram Power</div><div class="module-desc">Engagement aufbauen, Follower konvertieren.</div></div>
+    <div class="module-card"><div class="module-num">07</div><div class="module-title">Content & Storytelling</div><div class="module-desc">Geschichten, die verkaufen.</div></div>
+    <div class="module-card"><div class="module-num">08</div><div class="module-title">Verkaufspsychologie</div><div class="module-desc">Warum Menschen wirklich kaufen.</div></div>
+    <div class="module-card"><div class="module-num">09</div><div class="module-title">Digitale Produkte</div><div class="module-desc">Dein Wissen in skalierbare Produkte verwandeln.</div></div>
+    <div class="module-card"><div class="module-num">10</div><div class="module-title">E-Mail Marketing</div><div class="module-desc">Der stärkste Kanal für Verkäufe.</div></div>
+    <div class="module-card"><div class="module-num">11</div><div class="module-title">Affiliate System</div><div class="module-desc">Mit fremden Produkten verdienen.</div></div>
+    <div class="module-card"><div class="module-num">+12</div><div class="module-title">Und vieles mehr...</div><div class="module-desc">Von KI bis zur Skalierung – alles abgedeckt.</div></div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY SECTION -->
+<section class="eligibility">
+  <div style="text-align:center;">
+    <div class="section-tag">Ist DEINS für dich?</div>
+    <h2 class="section-title">DEINS passt zu dir wenn:</h2>
+  </div>
+  
+  <div class="eligibility-grid">
+    <div class="eligibility-item">Du willst digital starten</div>
+    <div class="eligibility-item">Du lernst gerne selbst</div>
+    <div class="eligibility-item">Du bist bereit, umzusetzen</div>
+    <div class="eligibility-item">Du willst keine Abhängigkeit</div>
+    <div class="eligibility-item">Du suchst klare Systeme</div>
+    <div class="eligibility-item">Du akzeptierst Eigenverantwortung</div>
+    <div class="eligibility-item">Du willst den ganzen Überblick</div>
+    <div class="eligibility-item">Du bist ehrlich mit dir selbst</div>
+  </div>
+  
+  <div class="not-suitable">
+    <strong>DEINS ist NICHT für dich wenn:</strong> Du garantierte Ergebnisse erwartest · Du nichts umsetzen wirst · Du keine Verantwortung übernehmen willst · Du auf den perfekten Moment wartest
+  </div>
+</section>
+
+<!-- PRICING SECTION -->
+<section class="pricing-hero" id="pricing">
+  <h2 class="pricing-headline">
+    Deine Investition ins digitale Fundament
+  </h2>
+  <p class="pricing-subheadline">
+    Einmalzahlung. Lifetime Zugang. Alle Updates inklusive.
+  </p>
+  
+  <div class="pricing-box">
+    <div style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin-bottom:16px;">Nur noch bis 31.05. um 21:00 Uhr</div>
+    <div class="pricing-old">Normalpreis: 1.500 €</div>
+    <div class="price-big">1.001 €</div>
+    <div class="price-period">Einmalig. Für immer.</div>
+    <div class="price-rate">💳 oder in Raten: ca. <strong>41,71 €/Monat</strong></div>
+    
+    <ul class="features-list">
+      <li><span class="tick">✦</span>23+ Module – das komplette System</li>
+      <li><span class="tick">✦</span>Lifetime Zugang zu allen Inhalten</li>
+      <li><span class="tick">✦</span>Alle zukünftigen Updates kostenlos</li>
+      <li><span class="tick">✦</span>Kein Coaching, kein Abo, kein Druck</li>
+      <li><span class="tick">✦</span>Lerne in deinem Tempo, wann du willst</li>
+      <li><span class="tick">✦</span>Bonusmaterial: Mein persönliches System</li>
+    </ul>
+    
+    <button class="cta-primary" style="width:100%;margin-top:24px;" onclick="window.open('https://www.checkout-ds24.com/product/672676','_blank');">
+      Jetzt sichern – direkt Zugriff →
+    </button>
+    
+    <div class="guarantee-box">
+      <strong>Das ist wichtig:</strong> Dies ist KEIN Coaching. DEINS ist ein digitales Selbstlernprogramm. Keine garantierten Ergebnisse. Nur echtes, praktisches Wissen. Dein Erfolg hängt von dir ab.
+    </div>
+  </div>
+</section>
+
+<!-- AFFILIATE SECTION -->
+<section class="affiliate-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Zusatzverdienst</div>
+    <h2 class="section-title">Verdiene mit DEINS<br><em>Provisionen</em></h2>
+  </div>
+  
+  <div class="affiliate-grid">
+    <div class="aff-stat">
+      <div class="aff-num">bis zu 70%</div>
+      <div class="aff-label">Provision pro Verkauf</div>
+    </div>
+    <div class="aff-stat">
+      <div class="aff-num">bis zu 700 €</div>
+      <div class="aff-label">pro Sale möglich</div>
+    </div>
+    <div class="aff-stat">
+      <div class="aff-num">0 €</div>
+      <div class="aff-label">Kein Produkt nötig</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="faq-section">
+  <div style="text-align:center;margin-bottom:40px;">
+    <div class="section-tag">Häufige Fragen</div>
+    <h2 class="section-title">Alles Wichtige klar</h2>
+  </div>
+  
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Muss ich mein Gesicht zeigen? <span class="chevron">▾</span></div>
+      <div class="faq-a">Nein. DEINS funktioniert mit Gesicht oder komplett faceless. Du entscheidest. Beide Wege funktionieren – es kommt auf Content und Wert an.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Brauche ich ein eigenes Produkt? <span class="chevron">▾</span></div>
+      <div class="faq-a">Nein. Das ist genau der Punkt. DEINS zeigt dir, wie du OHNE eigenes Produkt anfängst. Du kannst lernen, später ein Produkt aufbauen – oder auch nicht. Alles möglich.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Ist das ein Coaching? <span class="chevron">▾</span></div>
+      <div class="faq-a">Nein. DEINS ist ein digitales Selbstlernprogramm. Du arbeitest die Module selbst durch – in deinem Tempo. Keine 1:1 Betreuung, kein Daily Coaching. Nur Inhalte und Systeme.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Wie lange habe ich Zugang? <span class="chevron">▾</span></div>
+      <div class="faq-a">Lifetime. Du bekommst einmaliges Zugangsrecht zu allen Inhalten – für immer. Inkl. aller zukünftigen Module und Updates. Lerne in deinem Tempo, so oft wie du willst.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Gibt es garantierte Ergebnisse? <span class="chevron">▾</span></div>
+      <div class="faq-a">Nein. Niemand kann das versprechen. DEINS vermittelt dir Wissen und Werkzeuge. Dein Erfolg hängt von deinem Einsatz, deiner Umsetzung und deiner Situation ab.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Wann endet das Special? <span class="chevron">▾</span></div>
+      <div class="faq-a">Genau am 31.05. um 21:00 Uhr CEST. Danach kostet DEINS wieder 1.500 €. Nicht verhandelbar. Wenn du jetzt startest, zahlst du 1.001 €.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA SECTION -->
+<section class="cta-final">
+  <h2 class="cta-final-headline">
+    Die Digitalisierung wartet nicht.<br>
+    <em>Wann fängst du an?</em>
+  </h2>
+  
+  <p class="cta-final-text">
+    Du hast alles durchgelesen. Du weiß jetzt, was DEINS ist. Die Frage ist nicht mehr "Sollte ich?" sondern "Warum nicht heute?"
+  </p>
+  
+  <button class="cta-primary" onclick="document.querySelector('.pricing-hero').scrollIntoView({behavior:'smooth'});">
+    Jetzt DEINS sichern →
+  </button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>© 2026 Joana Weinreich · DEINS Digital</p>
+  <p style="margin-top:12px;">
+    <a href="#impressum">Impressum</a> · 
+    <a href="#datenschutz">Datenschutz</a> · 
+    <a href="https://www.digistore24.com" target="_blank">Zahlungsabwicklung über Digistore24</a>
+  </p>
+</footer>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-sticky" id="mobileSticky">
+  <div class="mobile-sticky-inner">
+    <div class="mobile-sticky-text">
+      <strong>Nur noch bis 31.05.</strong>
+      1.001 € – heute starten
+    </div>
+    <button class="mobile-sticky-btn" onclick="document.querySelector('.pricing-hero').scrollIntoView({behavior:'smooth'});">
+      Sichern →
+    </button>
+  </div>
+</div>
+
+<!-- IMPRESSUM -->
+<section id="impressum" class="legal-page" style="display:none; padding:60px 5%; background:var(--white); min-height:100vh;">
+  <div style="max-width:900px; margin:0 auto;">
+    <h1 style="font-size:2rem; font-weight:900; margin-bottom:40px; color:var(--dark);">Impressum</h1>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">Angaben gemäß § 5 TMG</h2>
+    
+    <p style="margin-bottom:8px;"><strong>Name:</strong> Joana Weinreich</p>
+    <p style="margin-bottom:8px;"><strong>Straße:</strong> Herbartstraße 22</p>
+    <p style="margin-bottom:8px;"><strong>PLZ/Ort:</strong> 40882 Ratingen</p>
+    <p style="margin-bottom:8px;"><strong>Land:</strong> Deutschland</p>
+    <p style="margin-bottom:24px;"><strong>E-Mail:</strong> Deins.info@web.de</p>
+    
+    <p style="margin-bottom:8px;"><strong>Geschäftsform:</strong> Einzelunternehmen</p>
+    <p style="margin-bottom:24px;"><strong>Umsatzsteuer-ID:</strong> DE452927486</p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">Haftung für Inhalte</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Die Inhalte unserer Seiten wurden mit großer Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Dienstanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 des TMG sind wir als Dienstanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen bleiben hiervon unberührt.
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">Haftung für Links</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">Urheberrecht</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Autors oder Schöpfers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht von uns erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
+    </p>
+    
+    <button onclick="closeLegal()" style="display:inline-block; background:var(--accent); color:var(--white); font-weight:700; padding:12px 28px; border-radius:4px; border:none; cursor:pointer; margin-top:40px;">↑ Zurück nach oben</button>
+  </div>
+</section>
+
+<!-- DATENSCHUTZ -->
+<section id="datenschutz" class="legal-page" style="display:none; padding:60px 5%; background:var(--white); min-height:100vh;">
+  <div style="max-width:900px; margin:0 auto;">
+    <h1 style="font-size:2rem; font-weight:900; margin-bottom:40px; color:var(--dark);">Datenschutzerklärung</h1>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">1. Verantwortliche Stelle</h2>
+    <p style="margin-bottom:8px;"><strong>Name:</strong> Joana Weinreich</p>
+    <p style="margin-bottom:8px;"><strong>Adresse:</strong> Herbartstraße 22, 40882 Ratingen, Deutschland</p>
+    <p style="margin-bottom:24px;"><strong>E-Mail:</strong> Deins.info@web.de</p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Personenbezogene Daten sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen. Dies umfasst beispielsweise Namen, E-Mail-Adressen und andere Kontaktdaten. Wir verarbeiten personenbezogene Daten nur auf Grundlage einer Rechtsgrundlage gemäß Art. 6 DSGVO. Die Verarbeitung erfolgt zu den Zwecken der Erfüllung von Verträgen, Erfüllung von rechtlichen Verpflichtungen oder auf Basis Ihrer Einwilligung.
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">3. Zahlungsabwicklung</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Die Zahlungsabwicklung für DEINS erfolgt über die Plattform Digistore24 GmbH (https://www.digistore24.com). Ihre Zahlungsdaten werden nicht von uns, sondern direkt von Digistore24 verarbeitet. Digistore24 ist als externer Zahlungsdienstleister Auftragsverarbeiter gemäß DSGVO. Ihre Daten werden von Digistore24 nach deren Datenschutzerklärung verarbeitet. Für die Verarbeitung durch Digistore24 ist deren Datenschutzerklärung (verfügbar auf der Digistore24-Webseite) maßgeblich. Wir haben keinen Zugriff auf Ihre Zahlungsdaten.
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">4. Ihre Rechte</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Sie haben nach der DSGVO folgende Rechte:
+    </p>
+    <ul style="margin-left:24px; margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      <li style="margin-bottom:8px;"><strong>Recht auf Auskunft (Art. 15 DSGVO):</strong> Sie können Auskunft über die Verarbeitung Ihrer personenbezogenen Daten verlangen.</li>
+      <li style="margin-bottom:8px;"><strong>Recht auf Berichtigung (Art. 16 DSGVO):</strong> Sie können die Berichtigung unrichtiger Daten verlangen.</li>
+      <li style="margin-bottom:8px;"><strong>Recht auf Löschung (Art. 17 DSGVO):</strong> Sie können unter bestimmten Voraussetzungen die Löschung Ihrer Daten verlangen.</li>
+      <li style="margin-bottom:8px;"><strong>Recht auf Einschränkung (Art. 18 DSGVO):</strong> Sie können die Einschränkung der Verarbeitung verlangen.</li>
+      <li style="margin-bottom:8px;"><strong>Recht auf Widerspruch (Art. 21 DSGVO):</strong> Sie können gegen die Verarbeitung widersprechen.</li>
+      <li style="margin-bottom:8px;"><strong>Recht auf Datenportabilität (Art. 20 DSGVO):</strong> Sie können die Übertragung Ihrer Daten verlangen.</li>
+    </ul>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">5. Speicherung von Daten</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Ihre personenbezogenen Daten werden nur so lange gespeichert, wie dies für die Erfüllung der Zwecke erforderlich ist. Nach Ablauf dieser Fristen werden die Daten gelöscht oder anonymisiert. Ausnahmen gelten für Daten, die aufgrund von Gesetzen oder Bestimmungen länger aufbewahrt werden müssen.
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">6. Kontakt zu Datenschutz</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Wenn Sie Fragen zu Ihren personenbezogenen Daten oder zur Datenschutzerklärung haben, kontaktieren Sie uns unter: <strong>Deins.info@web.de</strong>
+    </p>
+    
+    <h2 style="font-size:1.3rem; font-weight:700; margin-top:32px; margin-bottom:16px; color:var(--dark);">7. Benutzerrechte und Beschwerde</h2>
+    <p style="margin-bottom:16px; color:var(--gray); line-height:1.8;">
+      Sie haben das Recht, sich bei einer Datenschutzbehörde zu beschweren, wenn Sie der Meinung sind, dass die Verarbeitung Ihrer personenbezogenen Daten gegen die DSGVO verstößt. Die zuständige Behörde ist die Datenschutzbehörde in dem Bundesland, in dem Sie Ihren Wohnort haben.
+    </p>
+    
+    <button onclick="closeLegal()" style="display:inline-block; background:var(--accent); color:var(--white); font-weight:700; padding:12px 28px; border-radius:4px; border:none; cursor:pointer; margin-top:40px;">↑ Zurück nach oben</button>
+  </div>
+</section>
+
+<script>
+// ===== COUNTDOWN TIMER =====
+function updateCountdown() {
+  const endTime = new Date('2026-05-31T21:00:00+02:00').getTime();
+  const now = new Date().getTime();
+  const distance = endTime - now;
+
+  if (distance <= 0) {
+    document.getElementById('countDays').textContent = '00';
+    document.getElementById('countHours').textContent = '00';
+    document.getElementById('countMinutes').textContent = '00';
+    document.getElementById('countSeconds').textContent = '00';
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById('countDays').textContent = String(days).padStart(2, '0');
+  document.getElementById('countHours').textContent = String(hours).padStart(2, '0');
+  document.getElementById('countMinutes').textContent = String(minutes).padStart(2, '0');
+  document.getElementById('countSeconds').textContent = String(seconds).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// ===== MOBILE STICKY =====
+window.addEventListener('scroll', function() {
+  const sticky = document.getElementById('mobileSticky');
+  if (sticky) sticky.classList.toggle('hidden', window.scrollY < 400);
+}, {passive: true});
+
+// Initialize sticky as hidden
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('mobileSticky').classList.add('hidden');
+});
+
+// ===== LEGAL PAGES =====
+function showLegal(pageId) {
+  // Hide all legal pages
+  document.querySelectorAll('.legal-page').forEach(page => page.style.display = 'none');
+  // Show selected page
+  document.getElementById(pageId).style.display = 'block';
+  // Scroll to top
+  document.getElementById(pageId).scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+function closeLegal() {
+  document.querySelectorAll('.legal-page').forEach(page => page.style.display = 'none');
+  document.querySelector('.hero').scrollIntoView({behavior: 'smooth', block: 'start'});
+}
+
+// Update footer links to use showLegal function
+document.addEventListener('DOMContentLoaded', function() {
+  const impressumLink = document.querySelector('a[href="#impressum"]');
+  const datenschutzLink = document.querySelector('a[href="#datenschutz"]');
+  if (impressumLink) impressumLink.onclick = (e) => { e.preventDefault(); showLegal('impressum'); };
+  if (datenschutzLink) datenschutzLink.onclick = (e) => { e.preventDefault(); showLegal('datenschutz'); };
+});
+</script>
+
+</body>
+</html>
